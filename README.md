@@ -1,5 +1,9 @@
 # Azure Voting App: Cosmos DB edition
 
+Azure Voting app sample with Cosmos DB as the backend. To use this sample, first create a Cosmos DB instance with the SQL API. Next update the `docker-compose.yaml` file or the `azure-vote-cosmosdb-kubernetes.yaml` with the Cosmos DB endpoint and key. These files can then be used to start the application locally or in a Kuberntes cluster.
+
+This sample also works in Azure Container Instances. To do so, simply set the `COSMOS_DB_ENDPOINT` and `COSMOS_DB_MASTERKEY` variables when creating the container.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
@@ -11,5 +15,5 @@ a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow th
 provided by the bot. You will only need to do this once across all repos using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

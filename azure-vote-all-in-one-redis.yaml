@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: azure-vote-front
-        image: neilpeterson/azure-vote-front:cosmosdb
+        image: microsoft/azure-vote-front:cosmosdb
         ports:
         - containerPort: 80
         resources:
