@@ -39,7 +39,7 @@ resource "azurerm_container_group" "vote-aci" {
 
   container {
     name   = "vote-aci"
-    image  = "microsoft/azure-vote-front:cosmosdb"
+    image  = "${var.container-image}"
     cpu    = "0.5"
     memory = "1.5"
     port   = "80"
