@@ -1,10 +1,10 @@
 variable "resource_group" {
-  description = "The name of the resource group in which to create the container instance and Redis instance."
+  description = "The name of the resource group in which to create the container instance and Cosmos DB instance."
   default     = "vote-demo"
 }
 
 variable "location" {
-  description = "The location for the resource group in which to create the container instance and Redis instance."
+  description = "The location for the resource group in which to create the container instance and Cosmos DB instance."
   default     = "eastus"
 }
 
