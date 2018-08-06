@@ -8,7 +8,7 @@ import sys
 app = Flask(__name__)
 
 # Initialize Cosmos DB
-def cosmosdb():
+def cosmosdb(client):
 
     # Check for database - quick hack /fix up proper
     try:
@@ -43,7 +43,7 @@ def cosmosQuery(value, client):
     return len(results)
 
 # Delete vote records
-def cosmosDelete():
+def cosmosDelete(client):
     query = { 'query': "SELECT * FROM server s" }
     options = {}
     result_iterable = client.QueryDocuments(collection['_self'], query, options)
@@ -100,7 +100,7 @@ if app.config['SHOWHOST'] == "true":
 client = document_client.DocumentClient(COSMOS_DB_ENDPOINT, {'masterKey': COSMOS_DB_MASTERKEY})
 
 # Initalize Cosmos DB
-collection = cosmosdb()
+collection = cosmosdb(client)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -124,7 +124,7 @@ def index():
     elif request.method == 'POST':
 
         if request.form['vote'] == 'reset':
-            cosmosDelete()
+            cosmosDelete(client)
             # Vote tracking
             vote1 = 0
             vote2 = 0
