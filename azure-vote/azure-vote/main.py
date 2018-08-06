@@ -35,7 +35,7 @@ def cosmosdb():
     return collection
 
 # Query Cosmos DB
-def cosmosQuery(value):
+def cosmosQuery(value, client):
     query = { 'query': "SELECT * FROM server s WHERE s['value'] = '" + value + "'" }
     options = {}
     result_iterable = client.QueryDocuments(collection['_self'], query, options)
@@ -105,6 +105,9 @@ collection = cosmosdb()
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
+    # How can I remove this from here?
+    client = document_client.DocumentClient(COSMOS_DB_ENDPOINT, {'masterKey': COSMOS_DB_MASTERKEY})
+
     # Vote tracking
     vote1 = 0
     vote2 = 0
@@ -112,8 +115,8 @@ def index():
     if request.method == 'GET':
 
         # Get vote results
-        vote1 = cosmosQuery(button1)
-        vote2 = cosmosQuery(button2)
+        vote1 = cosmosQuery(button1, client)
+        vote2 = cosmosQuery(button2, client)
 
         # Return index with values
         return render_template("index.html", value1=vote1, value2=vote2, button1=button1, button2=button2, title=title)
@@ -136,8 +139,8 @@ def index():
             })
 
             # Get vote results
-            vote1 = cosmosQuery(button1)
-            vote2 = cosmosQuery(button2)
+            vote1 = cosmosQuery(button1, client)
+            vote2 = cosmosQuery(button2, client)
 
         # Return results
         return render_template("index.html", value1=vote1, value2=vote2, button1=button1, button2=button2, title=title)
