@@ -16,7 +16,7 @@
         },
         "defaultValue": "azurevote"
       }
-    },
+    }
     "variables": {
       "offerType": "Standard",
       "apiType": "GlobalDocumentDB",
