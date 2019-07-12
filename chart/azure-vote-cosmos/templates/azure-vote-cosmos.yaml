@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: azure-vote-front
+  name: {{ .Release.Name }}-azure-vote-front
 spec:
   replicas: 1
   strategy:
@@ -12,11 +12,11 @@ spec:
   template:
     metadata:
       labels:
-        app: azure-vote-front
+        app: {{ .Release.Name }}-azure-vote-front
     spec:
       containers:
-      - name: azure-vote-front
-        image: neilpeterson/azure-vote-front:cosmosdb
+      - name: {{ .Release.Name }}-azure-vote-front
+        image: {{ .Values.IMAGE }}
         ports:
         - containerPort: 80
         resources:
@@ -26,17 +26,17 @@ spec:
             cpu: 500m
         env:
         - name: COSMOS_DB_ENDPOINT
-          value: "<endpoint>"
+          value: {{ .Values.COSMOS_DB_ENDPOINT }}
         - name: COSMOS_DB_MASTERKEY
-          value: "<key>"
+          value: {{ .Values.COSMOS_DB_MASTERKEY }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: azure-vote-front
+  name: {{ .Release.Name }}-azure-vote-front
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: azure-vote-front
+    app: {{ .Release.Name }}-azure-vote-front
