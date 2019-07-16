@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}-azure-vote-front
-        image: {{ .Values.IMAGE }}
+        image: {{ .Values.IMAGE_REGISTRY }}/azure-vote-cosmos:{{ .Values.IMAGE_VERSION }}
         ports:
         - containerPort: 80
         resources:
