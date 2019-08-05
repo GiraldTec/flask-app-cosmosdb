@@ -1,4 +1,4 @@
-[![Build Status](https://nepeters-devops.visualstudio.com/azure-vote-reference/_apis/build/status/azure-vote-reference-Python%20package-CI?branchName=master)](https://nepeters-devops.visualstudio.com/azure-vote-reference/_build/latest?definitionId=65&branchName=master)
+[![Build Status](https://nepeters-devops.visualstudio.com/azure-vote-kubernetes/_apis/build/status/azure-vote-kubernetes-CI?branchName=master)](https://nepeters-devops.visualstudio.com/azure-vote-kubernetes/_build/latest?definitionId=72&branchName=master)
 
 # Azure Voting App: Cosmos DB edition
 
