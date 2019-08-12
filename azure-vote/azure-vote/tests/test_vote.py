@@ -1,9 +1,9 @@
 import pytest
 import math
 
-def vote_one():
+def test_sqrt():
    num = 25
    assert math.sqrt(num) == 5
 
-def vote_two():
+def testsquare():
    assert 2*20 == 40
