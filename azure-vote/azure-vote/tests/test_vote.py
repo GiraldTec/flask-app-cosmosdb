@@ -1,7 +1,7 @@
 import pytest
 import math
 
-def lint_one():
+def test_vote1():
    num = 25
    assert math.sqrt(num) == 5
 
