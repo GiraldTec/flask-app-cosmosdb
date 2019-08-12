@@ -1,7 +1,7 @@
 import pytest
 import math
 
-def test_sqrt():
+def test_sqrt_one():
    num = 25
    assert math.sqrt(num) == 5
 
