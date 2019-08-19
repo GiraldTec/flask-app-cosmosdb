@@ -1,7 +1,5 @@
 [![Build Status](https://nepeters-devops.visualstudio.com/azure-vote-kubernetes/_apis/build/status/azure-vote-kubernetes-CI?branchName=master)](https://nepeters-devops.visualstudio.com/azure-vote-kubernetes/_build/latest?definitionId=72&branchName=master)
 
-[![Board Status](https://nepeters-devops.visualstudio.com/79956c2a-2fe0-4e32-995c-323b69f7413f/262c8bf0-0c32-4b37-8d4c-ad31a61811e8/_apis/work/boardbadge/db52b4b4-5d9d-4919-8abd-265e16a10dc6?columnOptions=1)](https://nepeters-devops.visualstudio.com/79956c2a-2fe0-4e32-995c-323b69f7413f/_boards/board/t/262c8bf0-0c32-4b37-8d4c-ad31a61811e8/Microsoft.FeatureCategory/)
-
 # Azure Voting App: Cosmos DB edition
 
 Azure Voting app sample with Cosmos DB as the backend. To use this sample, first create a Cosmos DB instance with the SQL API. Next update the `docker-compose.yaml` file or the `azure-vote-cosmosdb-kubernetes.yaml` with the Cosmos DB endpoint and key. These files can then be used to start the application locally or in a Kuberntes cluster.
